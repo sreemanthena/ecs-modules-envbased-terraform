@@ -1,0 +1,9 @@
+cluster_name     = "dev-ecs-cluster"
+instance_type    = "t2.small"
+ami_id           = "ami-xxxxxx"
+key_name         = "dev-key-pair"
+min_size         = 1
+max_size         = 2
+desired_capacity = 1
+subnet_ids       = ["subnet-xxxxxx", "subnet-yyyyyy"]
+region           = "us-west-2"

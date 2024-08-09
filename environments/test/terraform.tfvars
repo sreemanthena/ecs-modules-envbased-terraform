@@ -1,0 +1,9 @@
+cluster_name     = "test-ecs-cluster"
+instance_type    = "t2.medium"
+ami_id           = "ami-yyyyyy"
+key_name         = "test-key-pair"
+min_size         = 2
+max_size         = 3
+desired_capacity = 2
+subnet_ids       = ["subnet-zzzzzz", "subnet-aaaaaa"]
+region           = "us-east-1"
