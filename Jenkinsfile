@@ -13,14 +13,14 @@ pipeline {
         }
         stage('Initialize Terraform') {
             steps {
-                dir("terraform/environments/${params.ENVIRONMENT}") {
+                dir("environments/${params.ENVIRONMENT}") {
                     sh 'terraform init'
                 }
             }
         }
         stage('Plan and Apply') {
             steps {
-                dir("terraform/environments/${params.ENVIRONMENT}") {
+                dir("environments/${params.ENVIRONMENT}") {
                     sh 'terraform apply -auto-approve'
                 }
             }
