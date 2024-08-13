@@ -11,10 +11,21 @@ pipeline {
                 git branch: 'feature/sree-terraform-ecs-v1', credentialsId: 'sreemanthena_act_github_token', url: 'git@github.com:sreemanthena/ecs-modules-envbased-terraform.git'
             }
         }
-        stage('Initialize Terraform') {
+        // stage('Initialize Terraform') {
+        //     steps {
+        //         dir("environments/${params.ENVIRONMENT}") {
+        //             sh 'terraform init'
+        //         }
+        //     }
+        // }
+
+        stage('Set Terraform Workspace and Initialize') {
             steps {
-                dir("environments/${params.ENVIRONMENT}") {
-                    sh 'terraform init'
+                script {
+                    // Set the Terraform workspace based on the Jenkins environment parameter
+                    sh "terraform workspace new ${params.ENVIRONMENT} || terraform workspace select ${params.ENVIRONMENT}"
+                    // Initialize Terraform with a dynamic backend configuration
+                    sh "terraform init -backend-config='./backend.hcl' -backend-config='key=ecs/env/${params.ENVIRONMENT}/terraform.tfstate'"
                 }
             }
         }
