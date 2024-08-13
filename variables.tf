@@ -4,11 +4,6 @@ variable "region" {
   default     = "us-west-2"
 }
 
-variable "cluster_name" {
-  description = "Name of the ECS cluster"
-  type        = string
-}
-
 variable "instance_type" {
   description = "EC2 instance type for the ECS cluster instances"
   type        = string
