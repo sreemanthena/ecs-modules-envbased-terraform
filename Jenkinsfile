@@ -9,7 +9,8 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                checkout scm
+                //git branch: 'feature/eks-ecs-module-envs', url: 'https://github.com/sreemanthena/eks-ecs-modules-envs-terraform.git'
+                git branch: 'feature/sree-terraform-ecs-v1', credentialsId: 'sreemanthena_act_github_token', url: 'git@github.com:sreemanthena/ecs-modules-envbased-terraform.git'
             }
         }
         stage('Initialize Terraform') {
@@ -17,6 +18,7 @@ pipeline {
                 dir("environments/${params.ENVIRONMENT}") {
                     script {
                         // Initialize Terraform
+                        
                         sh "terraform init"
                     }
                 }
