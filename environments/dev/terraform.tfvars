@@ -1,6 +1,6 @@
 project_name    = "myapp-dev"
-vpc_id          = "vpc-0a1b2c3d4e5f67890"
-subnet_ids      = ["subnet-0123456789abcdef0", "subnet-0123456789abcdef1"]
+vpc_id          = "vpc-02a14c26c38857594"
+subnet_ids      = ["subnet-0e89b68055d46ce1a", "subnet-0482f14f5fcd95d89"]
 container_name  = "nginx"
 container_image = "nginx:latest"
 container_port  = 80
