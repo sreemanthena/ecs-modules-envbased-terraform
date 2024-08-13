@@ -1,29 +1,29 @@
-variable "cluster_name" {
+variable "project_name" {
   type        = string
-  description = "The name of the ECS cluster"
+  description = "Name of the project, used for resource naming"
 }
 
 variable "vpc_id" {
   type        = string
-  description = "The VPC ID where the ECS cluster will be located"
+  description = "ID of the VPC where the ECS tasks will run"
 }
 
 variable "subnet_ids" {
   type        = list(string)
-  description = "A list of subnet IDs to launch resources in"
+  description = "List of subnet IDs for ECS tasks"
 }
 
 variable "container_name" {
   type        = string
-  description = "The name of the container to run"
+  description = "Name of the container to deploy"
 }
 
 variable "container_image" {
   type        = string
-  description = "The Docker image to use for the container"
+  description = "Container image to use in the task"
 }
 
 variable "container_port" {
   type        = number
-  description = "The port on which the container will listen"
+  description = "The port on which the container will accept traffic"
 }

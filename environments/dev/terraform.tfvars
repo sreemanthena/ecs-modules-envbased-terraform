@@ -1,9 +1,6 @@
-cluster_name     = "dev-ecs-cluster"
-instance_type    = "t2.small"
-ami_id           = "ami-xxxxxx"
-key_name         = "dev-key-pair"
-min_size         = 1
-max_size         = 2
-desired_capacity = 1
-subnet_ids       = ["subnet-xxxxxx", "subnet-yyyyyy"]
-region           = "us-west-2"
+project_name    = "myapp-dev"
+vpc_id          = "vpc-0a1b2c3d4e5f67890"
+subnet_ids      = ["subnet-0123456789abcdef0", "subnet-0123456789abcdef1"]
+container_name  = "nginx"
+container_image = "nginx:latest"
+container_port  = 80
